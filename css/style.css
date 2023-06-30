@@ -205,7 +205,7 @@ main .about_skystudio {
   width: 80%;
 }
 
-/* eyecatch */
+/* 各ページのアイキャッチ画像 */
 .eyecatch {
   width: 100%;
   border-radius: 0% 0% 30% 0%/0% 0% 40% 0%;
@@ -216,13 +216,52 @@ p + h3, p + h2 {
   margin-top: 2em;
 }
 
-/*Aboutページ*/
+/*Aboutページ
+---------------------------------------------------------------------------*/
 .jumbotron {
   height: calc(69.4444vw - 233.3333px);
   background-position: center center;
   background-size: cover;
 }
+.jumbotron__inner {
+  position: relative;
+  max-width: 1230px;
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.jumbotron__title {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  padding: 40px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-size: calc(3.704vw - 8.444px);
+  transform: translateY(-90%);
+}
 
+@media screen and (min-width: 1200px) {
+  .jumbotron {
+    height: 600px;
+  }
+  .jumbotron__title {
+    font-size: 2.25rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .jumbotron {
+    height: 300px;
+  }
+  .jumbotron__title {
+    left: 50%;
+    width: 90%;
+    padding: 15px;
+    font-size: 1.25rem;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+}
 /*menubarブロック初期設定
 ---------------------------------------------------------------------------*/
 #menubar ul {
