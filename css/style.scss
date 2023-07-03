@@ -73,7 +73,10 @@ video {max-width: 100%;}
 iframe {width: 100%;}
 
 /*ul,olタグ*/
-ul, ol {margin-bottom: 30px;}
+ul, ol {
+	margin-bottom: 30px;
+	list-style: none;
+}
 
 /*他*/
 section + section {
@@ -206,7 +209,7 @@ main .about_skystudio{
 	width:80%;
 }
 
-/* eyecatch */
+/* 各ページのアイキャッチ画像 */
 .eyecatch{
 	width:100%;
 	border-radius: 0% 0% 30% 0% / 0% 0% 40% 0%;	
@@ -216,13 +219,71 @@ main .about_skystudio{
 /*微調整*/
 p + h3,p + h2 {margin-top: 2em;}
 
-/*Aboutページ*/
+/*Aboutページ
+---------------------------------------------------------------------------*/
 .jumbotron{
 	height:calc(69.4444vw + -233.3333px);
 	background-position:center center;
 	background-size:cover;
+	&__inner{
+		position:relative;
+		max-width:1230px;
+		height:100%;
+		margin-right:auto;
+		margin-left:auto;
+	}
+	&__title{
+		position:absolute;
+		top:50%;
+		left:0;
+		padding:40px;
+		background-color:rgb(0,0,0,0.75);
+		color:#fff;
+		font-size:calc(3.704vw - 8.444px);
+		transform:translateY(-90%);
+	}
+}
+@media screen and (min-width:1200px){
+	.jumbotron{
+		height:600px;
+		&__title{
+			font-size:2.25rem;
+		}
+	}
+}
+@media screen and (max-width:768px){
+	.jumbotron{
+		height:300px;
+		&__title{
+			left:50%;
+			width:90%;
+			padding:15px;
+			font-size:1.25rem;
+			text-align:center;
+			transform:translate(-50%, -50%);
+		}
+	}
 }
 
+/*テーブル*/
+.horizontal-table{
+	border:1px solid #ddd;
+	&__inner{
+		width:100%;
+	}
+	&__header{
+		width: 20%;
+		padding:15px;
+		background-color: #c8c8c8f2;
+		border-bottom:1px solid #ddd;
+		font-weight:bold;
+		vertical-align: middle;
+	}
+	&__text{
+		padding:15px;
+		border-bottom:1px solid #ddd;
+	}
+}
 
 /*menubarブロック初期設定
 ---------------------------------------------------------------------------*/
@@ -342,6 +403,9 @@ p + h3,p + h2 {margin-top: 2em;}
 footer small {font-size: 100%;}
 
 footer {
+	margin-top:200px;
+	width:100%;
+	background-color: #333;
 	font-size: 0.7rem;		/*文字サイズ*/
 	text-align: center;		/*内容をセンタリング*/
 }
@@ -495,6 +559,77 @@ footer a {text-decoration: none;}
 	}
 	&__text{
 		color:#777;
+	}
+}
+
+
+/* 料金表ブロック */
+.price-boxes{
+	display:flex;
+	align-items:flex-start;
+	justify-content: center;;
+	&__item{
+		flex:1;
+		margin-right:2.43902%;
+		&:last-child{
+			margin-right:0;
+		}
+	}
+}
+@media screen and (max-width:768px){
+	.price-boxes{
+		display:block;
+		&__item{
+			margin-right:0;
+			margin-bottom:30px;
+			&:last-child{
+				margin-bottom:0
+			}
+		}
+	}
+}
+.price-box{
+	border:1px solid #ddd;
+	&__header{
+		padding:10px;
+		background-color:#0004e2;
+		color:#fff;
+		text-align:center;
+	}
+	&__title{
+		font-size:1.125rem;
+	}
+	&__price{
+		font-size:1.875rem;
+	}
+	&__price-title{
+		font-size:0.75rem;
+	}
+	&__price-unit{
+		font-size:1rem;
+	}
+	&__body{
+		padding:15px;
+		& > *:last-child{
+			margin-bottom:0;
+		}
+	}
+	&__lead{
+		margin-bottom:20px;
+	}
+	&__features{
+		text-align:center;
+		& > *:last-child{
+			margin-bottom:0;
+		}
+		&-header{
+			padding:5px;
+			margin-bottom:10px;
+			background-color:#2f2626c7;
+		}
+		&-text{
+			margin-bottom:20px;
+		}
 	}
 }
 
